@@ -61,7 +61,7 @@ def polygon(image_path, data, opacity):
         poly_image = cv2.addWeighted(overlay, opacity, image, 1-opacity, 0)
 
         window_name = 'image'
-        output.append(poly_image)
+    output.append(poly_image)
 
 #Second Image Visualization function
 def bb(image_path, data):
