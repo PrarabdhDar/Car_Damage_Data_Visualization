@@ -22,9 +22,10 @@ elif(len(sys.argv) == 4):
     opacity = int(float(sys.argv[3]))
 
 else:
-    print('INCORRECT INPUT\n Default Code Running...')
-    image_path = 'Assignment/Data Visualization/images/3.jpg'
-    meta_data_json_path = 'Assignment/Data Visualization/data/3.json'
+    print('Incorrect number of inputs\n')
+    print('Default Code Running...')
+    image_path = 'Assignment/Data Visualization/images/1.jpg'
+    meta_data_json_path = 'Assignment/Data Visualization/data/1.json'
     opacity = 0.2
 
 try:
