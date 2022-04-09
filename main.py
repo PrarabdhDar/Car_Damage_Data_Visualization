@@ -1,5 +1,6 @@
 #Importing important libraries
 import numpy as np
+from np import asarray
 import pandas as pd
 from PIL import Image
 import random as rng
@@ -90,6 +91,7 @@ def polygon(image_copy_1, data):
         cv2.fillPoly(overlay, np.int32([p]), color)
         poly_image = cv2.addWeighted(overlay, opacity, image_copy_1, 1-opacity, 0)
 
+        return asarray(poly_image)
 
 #Second Image Visualization function
  def bb(image_copy_2, data):
@@ -99,3 +101,5 @@ def polygon(image_copy_1, data):
     bottom.append((top[i][0] + 10*len(label[i]), top[i][1]))
     cv2.rectangle(image_copy_2, (top[i][0], top[i][1] - 15), bottom[i], (0,0,0), -1)
     cv2.putText(image_copy_2, label[i], top[i], cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,255,255), 1)
+
+    return asarray(image_copy_2)
