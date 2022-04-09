@@ -15,6 +15,7 @@ end = list()
 label = list()
 top = list()
 bottom = list()
+output = list()
 
 def denorm_and_bound(image_path, data):
     image = cv2.imread(image_path)
@@ -60,15 +61,17 @@ def polygon(image_path, data, opacity):
         poly_image = cv2.addWeighted(overlay, opacity, image, 1-opacity, 0)
 
         window_name = 'image'
-        print(asarray(poly_image))
+        output.append(poly_image)
 
 #Second Image Visualization function
 def bb(image_path, data):
     image = cv2.imread(image_path)
     height, width = image.shape[:2]
 
+    i=0
+
     for p in pts:
-        i = 0
+
         color = (rng.randint(0,256), rng.randint(0,256), rng.randint(0,256))
         cv2.rectangle(image, start[i], end[i], color, 2)
         bottom.append((top[i][0] + 10*len(label[i]), top[i][1]))
@@ -77,4 +80,5 @@ def bb(image_path, data):
         i = i + 1
 
     window_name = 'image'
-    print(asarray(image))
+    output.append(image)
+    return output
