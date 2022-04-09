@@ -99,5 +99,3 @@ def polygon(image_copy_1, data):
     bottom.append((top[i][0] + 10*len(label[i]), top[i][1]))
     cv2.rectangle(image_copy_2, (top[i][0], top[i][1] - 15), bottom[i], (0,0,0), -1)
     cv2.putText(image_copy_2, label[i], top[i], cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,255,255), 1)
-
-  bb(image_path[i], meta_data_json_path[i])
